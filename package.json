@@ -10,7 +10,7 @@
   "scripts": {
     "start": "if-env cross-env NODE_ENV=production && npm run start:prod || npm run start:dev",
     "start:prod": "cross-env NODE_ENV=production node index.js",
-    "start:dev": "cross-env NODE_ENV=development concurrently \"nodemon --ignore 'client/*'\" \"npm run client\"",
+    "start:dev": "cross-env NODE_ENV=development concurrently \"nodemon index.js --ignore 'client/*'\" \"npm run client\"",
     "client": "cd client && npm run start",
     "install": "cd client && npm install",
     "build": "cross-env NODE_ENV=production && cd client && npm run build",
