@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 
+import { axiosInstance } from "../../utils/api";
 const Home = () => {
 
     useEffect(() => {
