@@ -14,36 +14,38 @@ const {
 
 module.exports = {
     register: (req, res) => {
-        const user_id = uuidv4();
-        db.query(getUserIds, (err, data) => {
+        db.query(getUser, [req.body.email, req.body.first_name, req.body.last_name], (err, data) => {
+            console.log(getUser);
+            const user_id = uuidv4();
             if (err) return res.json(err);
-            for (let i = 0; i < data.length; i++) {
-                if (data[i].user_id === user_id) {
-                    return res.json("User ID already exists");
-                }
-            };
-            db.query(getUser, [req.body.email, req.body.first_name, req.body.last_name], (err, data) => {
+            if (data.length) return res.json("User already exists");
+            if (req.body.password.length < 8) return res.status(403).json("Password must be at least 8 characters long!");
+
+            const salt = bcrypt.genSaltSync(10);
+            const hash = bcrypt.hashSync(req.body.password, salt);
+
+            db.query(getUserIds, (err, data) => {
                 if (err) return res.json(err);
-                if (data.length) return res.json("User already exists");
-                if (req.body.password.length < 8) return res.status(403).json("Password must be at least 8 characters long!");
+                for (let i = 0; i < data.length; i++) {
+                    if (data[i].user_id === user_id) {
+                        return res.json("User ID already exists");
+                    }
+                };
+            });
 
-                const salt = bcrypt.genSaltSync(10);
-                const hash = bcrypt.hashSync(req.body.password, salt);
+            const values = [
+                user_id,
+                req.body.first_name,
+                req.body.last_name,
+                req.body.email,
+                hash
+            ];
 
-                const values = [
-                    user_id,
-                    req.body.first_name,
-                    req.body.last_name,
-                    req.body.email,
-                    hash
-                ];
+            console.log(values);
 
-                console.log(values);
-
-                db.query(setUserData, [values], (err) => {
-                    if (err) return res.json(err);
-                    return res.status(200).json("User registered");
-                });
+            db.query(setUserData, [values], (err, data) => {
+                if (err) return res.json(err);
+                return res.status(200).json("User registered");
             });
         });
     },
