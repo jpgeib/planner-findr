@@ -12,6 +12,8 @@ const {
     resetUserPassword
 } = require("../../models/auth");
 
+console.log(uuidv4());
+
 module.exports = {
     register: (req, res) => {
         db.query(getUser, [req.body.email, req.body.first_name, req.body.last_name], (err, data) => {
@@ -87,7 +89,7 @@ module.exports = {
 
                 jwt.verify(token, process.env.SECRET, (err) => {
                     if (err) return res.status(403).json("Invalid token");
-                    
+
                     console.log(req.body.newPassword);
                     const salt = bcrypt.genSaltSync(10);
                     const hash = bcrypt.hashSync(req.body.newPassword, salt);
