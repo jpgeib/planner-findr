@@ -1,13 +1,10 @@
-const express = require("express");
-const router = express.Router();
-const reviewController = require("../../controllers/reviewController");
-const { authenticateUser } = require("../../middlewares/authMiddleware");
+const router = require("express").Router();
+const { addReview, getReviews, getReview, updateReview, deleteReview } = require("../../../controllers/reviewController");
 
-// Routes
-router.get("/", reviewController.getAllReviews);
-router.get("/:id", reviewController.getReviewById);
-router.post("/", authenticateUser, reviewController.addUserReview);
-router.delete("/:id/:uid", authenticateUser, reviewController.deleteUserReview);
-router.put("/:id/:uid", authenticateUser, reviewController.updateUserReview);
+router.get("/", getReviews);
+router.get("/:id", getReview);
+router.post("/", addReview);
+router.delete("/:id", deleteReview);
+router.put("/:id", updateReview);
 
 module.exports = router;

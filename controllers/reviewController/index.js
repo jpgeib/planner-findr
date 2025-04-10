@@ -1,67 +1,90 @@
 const db = require("../../config");
-const queries = require("../../models/reviews");
+const jwt = require("jsonwebtoken");
+const {
+    getAllReviews,
+    getReviewById,
+    addUserReview,
+    deleteUserReview,
+    updateUserReview
+} = require("../../models/reviews");
 
-// Get All Reviews
-exports.getAllReviews = (req, res) => {
-    const { minRating = 1 } = req.query;
+module.exports = {
+    getReviews: (req, res) => {
+        console.log("getting all reviews");
+        db.query(getAllReviews, (err, data) => {
+            if (err) return res.status(500).json(err);
+            return res.status(200).json(data);
+        });
+    },
+    getReview: (req, res) => {
+        console.log("getting review by id");
+        db.query(getReviewById, [req.params.id], (err, data) => {
+            if (err) return res.status(500).json(err);
+            console.log(req.params.id);
+            return res.status(200).json(data[0]);
+        });
+    },
+    addReview: (req, res) => {
+        const token = req.cookies.access_token;
+        console.log(token);
+        if (!token) return res.status(401).json("Not authenticated!");
 
-    db.query(queries.getAllReviews, [minRating], (error, results) => {
-        if (error) return res.status(500).json({ message: "Server error", error });
-        res.status(200).json(results);
-    });
-};
+        jwt.verify(token, process.env.SECRET, (err, userInfo) => {
+            if (err) return res.status(403).json("Invalid token!");
 
-// Get Review by ID
-exports.getReviewById = (req, res) => {
-    const { id } = req.params;
+            const values = [
+                userInfo.id,
+                req.body.text,
+                req.body.rating,
+                req.body.date,
+                req.body.image 
+            ];
+            
+            console.log("adding review with " + values);
 
-    db.query(queries.getReviewById, [id], (error, results) => {
-        if (error) return res.status(500).json({ message: "Server error", error });
-        if (results.length === 0) return res.status(404).json({ message: "Review not found" });
-        res.status(200).json(results[0]);
-    });
-};
+            db.query(addUserReview, [values], (err) => {
+                if (err) return res.status(500).json(err);
+                return res.json("Review added");
+            });
+        });
+    },
+    deleteReview: (req, res) => {
+        const token = req.cookies.access_token;
+        console.log(token);
+        if (!token) return res.status(401).json("Not authenticated!");
 
-// Add a Review
-exports.addUserReview = (req, res) => {
-    const { uid, text, rating } = req.body;
-    const date = new Date(); // Automatically set current date
+        jwt.verify(token, process.env.SECRET, (err, userInfo) => {
+            if (err) return res.status(403).json("Invalid token!");
 
-    // Validate rating
-    if (rating < 1 || rating > 5) {
-        return res.status(400).json({ message: "Rating must be between 1 and 5" });
+            const reviewId = req.params.id;
+
+            console.log("deleting review with id " + reviewId + " and user id " + userInfo.id);
+
+            db.query(deleteUserReview, [reviewId, userInfo.id], (err) => {
+                if (err) return res.status(500).json("You can only delete your own reviews!");
+                return res.json("Review deleted");
+            });
+        });
+    },
+    updateReview: (req, res) => {
+        const token = req.cookies.access_token;
+        console.log(token);
+        if (!token) return res.status(401).json("Not authenticated!");
+
+        jwt.verify(token, process.env.SECRET, (err, userInfo) => {
+            if (err) return res.status(403).json("Token is not valid.");
+
+            const reviewId = req.params.id;
+            const values = [req.body.text, req.body.rating, req.body.image];
+
+            console.log("updating review with id " + reviewId + " and uid " + userInfo.id);
+            console.log(values);
+
+            db.query(updateUserReview, [...values, reviewId, userInfo.id], (err) => {
+                console.log(updateUserReview);
+                if (err) return res.status(500).json(err);
+                return res.json("Review updated");
+            });
+        });
     }
-
-    db.query(queries.addUserReview, [uid, text, rating, date], (error, result) => {
-        if (error) return res.status(500).json({ message: "Server error", error });
-        res.status(201).json({ message: "Review added successfully", reviewId: result.insertId });
-    });
-};
-
-// Delete a Review
-exports.deleteUserReview = (req, res) => {
-    const { id, uid } = req.params;
-
-    db.query(queries.deleteUserReview, [id, uid], (error, result) => {
-        if (error) return res.status(500).json({ message: "Server error", error });
-        if (result.affectedRows === 0) return res.status(404).json({ message: "Review not found or unauthorized" });
-        res.status(200).json({ message: "Review deleted successfully" });
-    });
-};
-
-// Update a Review
-exports.updateUserReview = (req, res) => {
-    const { id, uid } = req.params;
-    const { text, rating } = req.body;
-
-    // Validate rating
-    if (rating < 1 || rating > 5) {
-        return res.status(400).json({ message: "Rating must be between 1 and 5" });
-    }
-
-    db.query(queries.updateUserReview, [text, rating, id, uid], (error, result) => {
-        if (error) return res.status(500).json({ message: "Server error", error });
-        if (result.affectedRows === 0) return res.status(404).json({ message: "Review not found or unauthorized" });
-        res.status(200).json({ message: "Review updated successfully" });
-    });
 };
