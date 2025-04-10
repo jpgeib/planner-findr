@@ -8,13 +8,13 @@
     "npm": "11.x"
   },
   "scripts": {
-    "start": "if-env cross-env NODE_ENV=production && npm run start:prod || npm run start:dev",
-    "start:prod": "cross-env NODE_ENV=production node index.js",
-    "start:dev": "cross-env NODE_ENV=development concurrently \"nodemon --ignore 'client/*'\" \"npm run client\"",
+    "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
+    "start:prod": "NODE_ENV=production node index.js",
+    "start:dev": "NODE_ENV=development concurrently \"nodemon --ignore 'client/*'\" \"npm run client\"",
     "client": "cd client && npm run start",
     "install": "cd client && npm install",
-    "build": "cross-env NODE_ENV=production && cd client && npm run build",
-    "heroku-postbuild": "cross-env NODE_ENV=production && npm run build"
+    "build": "NODE_ENV=production && cd client && npm run build",
+    "heroku-postbuild": "NODE_ENV=production && npm run build"
   },
   "devDependencies": {
     "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
