@@ -2,12 +2,12 @@ import React from "react";
 
 import "./style.css";
 
-const Navbar = () => {
+const ProviderBanner = () => {
     return (
         <>
-            <h1>Navbar</h1>
+            <h1>Provider Banner</h1>
         </>
     );
 };
 
-export default Navbar;
+export default ProviderBanner;
