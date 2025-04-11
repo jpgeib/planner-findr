@@ -11,7 +11,7 @@ module.exports = {
         db.query(testCall, (err, data) => {
             if (err) console.log(err);
             console.log(data);
+            res.json("test route is working");
         });
-        res.json("test route is working");
     }
 };
