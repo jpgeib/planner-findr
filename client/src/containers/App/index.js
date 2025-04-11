@@ -19,6 +19,7 @@ import SingleEvent from "../../pages/SingleEvent";
 import Events from "../../pages/Events";
 import Reservations from "../../pages/Reservations";
 import SingleReservation from "../../pages/SingleReservation";
+import Footer from "../../components/Footer";
 
 
 const App = () => {
@@ -45,6 +46,7 @@ const App = () => {
         <Route exact path="/edit/:id" element={<Edit />} />
         <Route exact path="/contact" element={<Contact />} />
       </Routes>
+      <Footer />
     </>
   );
 }
