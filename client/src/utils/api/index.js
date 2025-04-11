@@ -1,6 +1,7 @@
 import axios from "axios";
 
 console.log(process.env.NODE_ENV);
+console.log(process.env.REACT_APP_API_URL);
 
 const baseURL = process.env.NODE_ENV === "production" ? process.env.REACT_APP_API_URL : "http://localhost:3001/api/";
 
