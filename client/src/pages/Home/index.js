@@ -10,7 +10,7 @@ const Home = () => {
         const fetchData = async () => {
             try {
                 const res = await axiosInstance.get("/test");
-                console.log(res.data);
+                console.log(res.data + "What even is this?");
             } catch (error) {
                 console.error(error);
             };
