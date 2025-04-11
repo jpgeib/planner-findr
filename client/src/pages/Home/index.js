@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import ServiceSearchProvider from "../../components/ServiceProviderSearch";
 
 import { axiosInstance } from "../../utils/api";
 const Home = () => {
@@ -17,7 +18,7 @@ const Home = () => {
 
     return (
         <>
-            <h1>Home Page</h1>
+            <ServiceSearchProvider />
         </>
     );
 };
