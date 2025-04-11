@@ -30,7 +30,27 @@ app.use(cors({
 
 app.use(bodyParser.json());
 app.use(cookieParser());
-app.use(helmet());
+app.use(helmet({
+    contentSecurityPolicy: {
+        directives: {
+            ...helmet.contentSecurityPolicy.getDefaultDirectives(),
+            "connect-src": [
+                "'self'",
+                "planner-findr-6e71ae3fb693.herokuapp.com",
+            ],
+            "frame-src": [
+                "'self'",
+                "www.google.com",
+                "www.youtube.com"
+            ],
+            "img-src": [
+                "'self'",
+                "plannerfindr.s3.amazonaws.com",
+                "plannerfindr.s3.us-east-1.amazonaws.com"
+            ],
+        }
+    }
+}));
 
 app.use(routes);
 
