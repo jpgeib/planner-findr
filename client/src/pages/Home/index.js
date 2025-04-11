@@ -1,7 +1,9 @@
 import React, { useEffect } from "react";
 import ServiceSearchProvider from "../../components/ServiceProviderSearch";
+import AvailableServices from "../../components/AvailableServices";
 
 import { axiosInstance } from "../../utils/api";
+
 const Home = () => {
 
     useEffect(() => {
@@ -19,6 +21,7 @@ const Home = () => {
     return (
         <>
             <ServiceSearchProvider />
+            <AvailableServices />
         </>
     );
 };

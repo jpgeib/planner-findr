@@ -1,0 +1,29 @@
+#available-services-container {
+    padding: 2%;
+}
+
+
+
+#available-services-header {
+  text-align: center;
+}
+
+#available-services-subheader {
+    text-align: center;
+    font-size: 16px;
+}
+
+#available-services {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    width: 60%;
+    margin: 0 auto;
+}
+
+.available-services-col {
+    text-align: center;
+}
+
+.available-services-emoji {
+  font-size: 50px;
+}
