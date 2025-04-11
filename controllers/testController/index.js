@@ -8,7 +8,7 @@ const { testCall } = require("../../models/test");
 
 module.exports = {
     test: (req, res) => {
-        db.query(testCall, (err, data) => {
+        db.query("USE " + process.env.PROD_DB_NAME + "; " + testCall, (err, data) => {
             if (err) console.log(err);
             console.log(data);
         });
