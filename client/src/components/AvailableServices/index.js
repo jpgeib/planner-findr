@@ -13,18 +13,18 @@ const AvailableServices = () => {
                 <div id="available-services">
                     <div className="available-services-col">
                         <p className="available-services-emoji">😊</p>
-                        <Header as="h4">Makeup Artists</Header>
-                        <Header as="h4">For flawless looks</Header>
+                        <Header className="available-services-col-header" as="h4">Makeup Artists</Header>
+                        <Header className="available-services-col-subheader" as="h4">For flawless looks</Header>
                     </div>
                     <div className="available-services-col">
                         <p className="available-services-emoji">📸</p>
-                        <Header as="h4">Photographers</Header>
-                        <Header as="h4">Capture memories</Header>
+                        <Header className="available-services-col-header" as="h4">Photographers</Header>
+                        <Header className="available-services-col-subheader" as="h4">Capture memories</Header>
                     </div>
                     <div className="available-services-col">
                         <p className="available-services-emoji">👗</p>
-                        <Header as="h4">Designers</Header>
-                        <Header as="h4">Unique creations</Header>
+                        <Header className="available-services-col-header" as="h4">Designers</Header>
+                        <Header className="available-services-col-subheader" as="h4">Unique creations</Header>
                     </div>
                 </div>
             </div>
