@@ -11,7 +11,11 @@ const app = express();
 const server = require("http").createServer(app);
 const path = require("path");
 const routes = require("./routes");
-const allowedOrigins = ["http://localhost:3000", "http://localhost:3001"];
+const allowedOrigins = [
+    "http://localhost:3000", 
+    "http://localhost:3001",
+    "https://planner-findr-6e71ae3fb693.herokuapp.com"
+];
 const PORT = process.env.PORT || 3001;
 
 //Middlewares
