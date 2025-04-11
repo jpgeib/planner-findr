@@ -18,6 +18,7 @@ import Contact from "../../pages/Contact";
 import SingleEvent from "../../pages/SingleEvent";
 import Events from "../../pages/Events";
 import Reservations from "../../pages/Reservations";
+import SingleReservation from "../../pages/SingleReservation";
 
 
 const App = () => {
