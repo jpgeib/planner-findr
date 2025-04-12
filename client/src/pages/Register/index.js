@@ -17,8 +17,6 @@ const Register = (props) => {
     const [err, setError] = useState(null);
     const navigate = useNavigate();
 
-    const site = whichWebsite(window.location.href, "zuse", "acp", "union");
-
     const handleChange = async (e) => {
         setInputs(prev => ({ ...prev, [e.target.name]: e.target.value }));
     };
@@ -26,7 +24,7 @@ const Register = (props) => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            await axiosInstance.post(`${site}/auth/register`, inputs);
+            await axiosInstance.post(`/auth/register`, inputs);
             navigate("/login");
         } catch (err) {
             console.error(err.response.data);
