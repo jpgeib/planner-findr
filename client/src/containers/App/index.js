@@ -53,7 +53,7 @@ const App = () => {
 
   return (
     <>
-      <Navbar />
+      <Navbar auth={auth} />
       <Routes>
         <Route exact path="/" element={<Home auth={auth} />} />
         <Route exact path="/about" element={<About />} />
@@ -61,7 +61,7 @@ const App = () => {
         <Route exact path="/login" element={<Login auth={auth} />} />
         <Route exact path="/forgot" element={<ForgotPassword auth={auth} />} />
         <Route exact path="/reset/:id/:token" element={<ResetPassword auth={auth} />} />
-        <Route exact path="/profile" element={<Profile auth={auth} />} />
+        <Route exact path="/profile/:id" element={<Profile auth={auth} />} />
         <Route exact path="/events" element={<Events auth={auth} />} />
         <Route exact path="/event/:id" element={<SingleEvent auth={auth} />} />
         <Route exact path="/reservations" element={<Reservations auth={auth} />} />

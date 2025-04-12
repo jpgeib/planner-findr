@@ -1,10 +1,14 @@
 import React from "react";
-import { Menu, Image } from "semantic-ui-react";
+import { Menu, Dropdown, Image } from "semantic-ui-react";
 import { Link } from "react-router-dom";
+import LogoutModal from "../LogoutModal";
 
 import "./style.css";
 
-const Navbar = () => {
+const Navbar = (props) => {
+
+    const { currentUser, logout } = props.auth;
+
     return (
         <>
             <Menu id="main-menu" fluid secondary>
@@ -31,14 +35,6 @@ const Navbar = () => {
                     name="about"
                 >
                     About
-                </Menu.Item>
-                <Menu.Item
-                    className="header-nav-item"
-                    as={Link}
-                    to="/profile"
-                    name="profile"
-                >
-                    Profile
                 </Menu.Item>
                 <Menu.Item
                     className="header-nav-item"
@@ -80,6 +76,28 @@ const Navbar = () => {
                 >
                     Contact
                 </Menu.Item>
+                {currentUser === null ? <Menu.Item
+                    className="header-nav-item"
+                    as={Link}
+                    to="/login"
+                    name="login"
+                >
+                    Log In
+                </Menu.Item> :
+                <Menu.Item
+                    className="header-nav-item"
+                    name="profile"
+                >
+                    <Image src={currentUser.profile_image} size="mini" circular />
+                    <Dropdown>
+                        <Dropdown.Menu>
+                            <Dropdown.Item as={Link} target=":blank" to={`/profile/${currentUser.id}`}>Profile</Dropdown.Item>
+                            <Dropdown.Item>
+                                <LogoutModal logout={logout} />
+                            </Dropdown.Item>
+                        </Dropdown.Menu>
+                    </Dropdown>
+                </Menu.Item>}
             </Menu>
         </>
     );
