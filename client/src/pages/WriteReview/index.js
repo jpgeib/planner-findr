@@ -6,7 +6,7 @@ import moment from "moment";
 
 import "./style.css";
 
-const Write = (props) => {
+const WriteReview = (props) => {
 
     const { whichWebsite } = props;
     const { currentUser, notAuthorized } = props.auth;
@@ -106,4 +106,4 @@ const Write = (props) => {
     );
 };
 
-export default Write;
+export default WriteReview;

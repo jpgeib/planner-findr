@@ -14,8 +14,8 @@ import Providers from "../../pages/Providers";
 import SingleProvider from "../../pages/SingleProvider";
 import Reviews from "../../pages/Reviews";
 import SingleReview from "../../pages/SingleReview";
-import Write from "../../pages/Write";
-import Edit from "../../pages/Edit";
+import WriteReview from "../../pages/WriteReview";
+import EditReview from "../../pages/EditReview";
 import Contact from "../../pages/Contact";
 import SingleEvent from "../../pages/SingleEvent";
 import Events from "../../pages/Events";
@@ -70,8 +70,8 @@ const App = () => {
         <Route exact path="/provider/:id" element={<SingleProvider auth={auth} />} />
         <Route exact path="/reviews" element={<Reviews auth={auth} />} />
         <Route exact path="/review/:id" element={<SingleReview auth={auth} />} />
-        <Route exact path="/write" element={<Write auth={auth} />} />
-        <Route exact path="/edit/:id" element={<Edit auth={auth} />} />
+        <Route exact path="/review/write" element={<WriteReview auth={auth} />} />
+        <Route exact path="/review/:id/edit" element={<EditReview auth={auth} />} />
         <Route exact path="/contact" element={<Contact />} />
       </Routes>
       <Footer />

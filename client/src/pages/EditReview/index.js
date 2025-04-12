@@ -6,7 +6,7 @@ import moment from "moment";
 
 import "./style.css";
 
-const Edit = (props) => {
+const EditReview = (props) => {
 
     const { whichWebsite } = props;
     const { currentUser, notAuthorized } = props.auth;
@@ -132,4 +132,4 @@ const Edit = (props) => {
     );
 }
 
-export default Edit;
+export default EditReview;
