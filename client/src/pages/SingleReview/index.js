@@ -7,7 +7,7 @@ import moment from "moment";
 
 import "./style.css";
 
-const Review = (props) => {
+const SingleReview = (props) => {
 
     const { currentUser, notAuthorized } = props.auth;
     const { whichWebsite, screenWidth } = props;
@@ -80,4 +80,4 @@ const Review = (props) => {
     );
 }
 
-export default Review;
+export default SingleReview;
