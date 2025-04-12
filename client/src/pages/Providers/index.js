@@ -8,11 +8,7 @@ import "./style.css";
 
 const Providers = (props) => {
 
-    const { whichWebsite } = props;
-
     const [providers, setProviders] = useState([]);
-
-    const site = whichWebsite(window.location.href, "zuse", "acp", "union");
 
     useEffect(() => {
         const fetchData = async () => {
@@ -30,7 +26,7 @@ const Providers = (props) => {
         <div id="providers-container">
             <div id="providers-headers-container">
                 <div className="providers-headers-col">
-                    <Header as="h1" id="providers-header">providers</Header>
+                    <Header as="h1" id="providers-header">Providers</Header>
                 </div>
                 <div className="providers-headers-col">
                     <Button as={Link} to="/write" size="massive" icon labelPosition="right" id="write-provider-btn">Write A provider<Icon id="write-icon" name="edit" /></Button>

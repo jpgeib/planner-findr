@@ -8,11 +8,7 @@ import "./style.css";
 
 const Events = (props) => {
 
-    const { whichWebsite } = props;
-
     const [events, setEvents] = useState([]);
-
-    const site = whichWebsite(window.location.href, "zuse", "acp", "union");
 
     useEffect(() => {
         const fetchData = async () => {
@@ -30,10 +26,10 @@ const Events = (props) => {
         <div id="events-container">
             <div id="events-headers-container">
                 <div className="events-headers-col">
-                    <Header as="h1" id="events-header">events</Header>
+                    <Header as="h1" id="events-header">Events</Header>
                 </div>
                 <div className="events-headers-col">
-                    <Button as={Link} to="/write" size="massive" icon labelPosition="right" id="write-event-btn">Write A event<Icon id="write-icon" name="edit" /></Button>
+                    <Button as={Link} to="/write" size="massive" icon labelPosition="right" id="write-event-btn">Create An Event<Icon id="write-icon" name="edit" /></Button>
                 </div>
             </div>
             <p className="events-text">{events.length > 0 ? "Don't take our word for it, listen to our satisfied customers!" : "Looks like we don't have any events yet, you could be the first!"}</p>

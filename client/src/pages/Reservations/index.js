@@ -8,11 +8,7 @@ import "./style.css";
 
 const Reservations = (props) => {
 
-    const { whichWebsite } = props;
-
     const [reservations, setReservations] = useState([]);
-
-    const site = whichWebsite(window.location.href, "zuse", "acp", "union");
 
     useEffect(() => {
         const fetchData = async () => {
@@ -33,7 +29,7 @@ const Reservations = (props) => {
                     <Header as="h1" id="reservations-header">reservations</Header>
                 </div>
                 <div className="reservations-headers-col">
-                    <Button as={Link} to="/write" size="massive" icon labelPosition="right" id="write-reservation-btn">Write A reservation<Icon id="write-icon" name="edit" /></Button>
+                    <Button as={Link} to="/write" size="massive" icon labelPosition="right" id="write-reservation-btn">Make A Reservation<Icon id="write-icon" name="edit" /></Button>
                 </div>
             </div>
             <p className="reservations-text">{reservations.length > 0 ? "Don't take our word for it, listen to our satisfied customers!" : "Looks like we don't have any reservations yet, you could be the first!"}</p>

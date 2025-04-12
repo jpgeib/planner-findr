@@ -8,11 +8,7 @@ import "./style.css";
 
 const Reviews = (props) => {
 
-    const { whichWebsite } = props;
-
     const [reviews, setReviews] = useState([]);
-
-    const site = whichWebsite(window.location.href, "zuse", "acp", "union");
 
     useEffect(() => {
         const fetchData = async () => {
@@ -38,7 +34,7 @@ const Reviews = (props) => {
             </div>
             <p className="reviews-text">{reviews.length > 0 ? "Don't take our word for it, listen to our satisfied customers!" : "Looks like we don't have any reviews yet, you could be the first!"}</p>
             {reviews.length > 0 ? null : <div id="reviews-no-result-container">
-                <Image id="reviews-no-result-image" src="https://zuse-inc-bucket.s3.amazonaws.com/no-results-blue.png" draggable="false" />
+                <Image id="reviews-no-result-image" src="https://zuse-inc-bucket.s3.amazonaws.com/no-results-blue.png"  />
             </div>}
             <div id="reviews">
                 {reviews.map((review, index) => {
