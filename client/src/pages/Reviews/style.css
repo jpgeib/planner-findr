@@ -103,6 +103,14 @@
     margin: 5% 0;
 }
 
+.review-card-author {
+    display: flex;
+}
+
+.review-card-author-name {
+    margin: 2.5% 5%;
+}
+
 #write-review-btn {
     background-color: #000 !important;
     color: white !important;

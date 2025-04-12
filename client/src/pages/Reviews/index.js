@@ -45,7 +45,10 @@ const Reviews = (props) => {
                                     <Image className="review-card-image" src={review.image} draggable="false" />
                                     <Rating className="review-card-rating" maxRating={5} rating={review.rating} icon="star" size="huge" disabled />
                                     <div className="review-card-text">{review.text}</div>
-                                    <div className="review-card-author">{review.first_name} {review.last_name}</div>
+                                    <div className="review-card-author">
+                                        <Image src={review.profile_image} size="mini" circular />
+                                        <div className="review-card-author-name">{review.first_name} {review.last_name}</div>
+                                    </div>
                                     <div className="review-card-date">{moment(review.date).format("MMMM Do YYYY")}</div>
                                 </div>
                             </Link>

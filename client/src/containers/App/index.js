@@ -55,7 +55,7 @@ const App = () => {
     <>
       <Navbar auth={auth} />
       <Routes>
-        <Route exact path="/" element={<Home auth={auth} />} />
+        <Route exact path="/" element={<Home auth={auth} screenWidth={width} />} />
         <Route exact path="/about" element={<About />} />
         <Route exact path="/register" element={<Register auth={auth} />} />
         <Route exact path="/login" element={<Login auth={auth} />} />

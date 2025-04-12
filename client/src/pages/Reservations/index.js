@@ -26,7 +26,7 @@ const Reservations = (props) => {
         <div id="reservations-container">
             <div id="reservations-headers-container">
                 <div className="reservations-headers-col">
-                    <Header as="h1" id="reservations-header">reservations</Header>
+                    <Header as="h1" id="reservations-header">Reservations</Header>
                 </div>
                 <div className="reservations-headers-col">
                     <Button as={Link} to="/write" size="massive" icon labelPosition="right" id="write-reservation-btn">Make A Reservation<Icon id="write-icon" name="edit" /></Button>

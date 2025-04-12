@@ -2,10 +2,13 @@ import React, { useEffect } from "react";
 import ServiceSearchProvider from "../../components/ServiceProviderSearch";
 import AvailableServices from "../../components/AvailableServices";
 import ContactForm from "../../components/ContactForm";
-
+import FeaturedProviders from "../../components/FeaturedProviders";
 import { axiosInstance } from "../../utils/api";
 
-const Home = () => {
+
+const Home = (props) => {
+
+    const { screenWidth } = props;
 
     useEffect(() => {
         const fetchData = async () => {
@@ -23,6 +26,7 @@ const Home = () => {
         <>
             <ServiceSearchProvider />
             <AvailableServices />
+            <FeaturedProviders screenWidth={screenWidth} />
             <ContactForm />
         </>
     );
