@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import ServiceSearchProvider from "../../components/ServiceProviderSearch";
 import AvailableServices from "../../components/AvailableServices";
-import HomeContactForm from "../../components/HomeContactForm";
+import ContactForm from "../../components/ContactForm";
 
 import { axiosInstance } from "../../utils/api";
 
@@ -23,7 +23,7 @@ const Home = () => {
         <>
             <ServiceSearchProvider />
             <AvailableServices />
-            <HomeContactForm />
+            <ContactForm />
         </>
     );
 };

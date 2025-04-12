@@ -11,7 +11,7 @@ const {
 module.exports = {
     getReviews: (req, res) => {
         console.log("getting all reviews");
-        db.query(getAllReviews, (err, data) => {
+        db.query(getAllReviews, [3], (err, data) => {
             if (err) return res.status(500).json(err);
             return res.status(200).json(data);
         });

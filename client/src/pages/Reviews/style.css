@@ -1,0 +1,369 @@
+#reviews-container {
+    background-color: #fff;
+    width: 60%;
+    margin: 0 20%;
+    border: solid 1px #fff;
+}
+
+#reviews-headers-container {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    row-gap: 20px;
+    width: 96%;
+    margin: 2% 2%;
+}
+
+.reviews-headers-col:nth-child(1) {
+    grid-column: 1 / span 2;
+}
+
+.reviews-headers-col:nth-child(2) {
+    grid-column: 3 / span 10;
+}
+
+#reviews-header {
+    padding: 2%;
+}
+
+.reviews-text {
+    width: 80%;
+    margin: 0 10%;
+    font-size: 18px;
+    text-align: center;
+}
+
+#reviews {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    column-gap: 20px;
+    row-gap: 20px;
+    padding: 2% 3%;
+}
+
+#reviews-no-result-container {
+    width: 30%;
+    margin: 5% 35%;
+    text-align: center;
+}
+
+#reviews-no-result-image {
+    width: 60%;
+    margin: 0 20%;
+}
+
+.review-card {
+    border: solid 1px #d2caca;
+    border-radius: 5px;
+    padding: 5%;
+    transition: transform .5s;
+    height: 460px;
+    background-color: #faf9f7;
+}
+
+.review-card:hover {
+    transform: scale(1.05);
+}
+
+.review-card-btn-container {
+    width: 35% !important;
+    margin: 0 0 0 65% !important;
+}
+
+.review-card-icon {
+    color: black;
+}
+
+.review-card-image {
+    width: 100%;
+    height: 200px;
+    object-fit: contain;
+    border-radius: 5px;
+    margin-bottom: 10%!important;
+}
+
+.review-card-image,
+.review-card-rating {
+    margin: 2% 0;
+}
+
+.review-card-text {
+    -webkit-box-orient: vertical;
+    display: -webkit-box;
+    -webkit-line-clamp: 5;
+    line-clamp: 5;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: normal;
+}
+
+.review-card-text,
+.review-card-date,
+.review-card-author {
+    color: black;
+    margin: 5% 0;
+}
+
+#write-review-btn {
+    background-color: #f11515 !important;
+    color: white !important;
+    font-size: 18px !important;
+    width: 20%;
+    float: right;
+    transition: ease 0.5s !important;
+}
+
+#write-review-btn:hover {
+    background-color: #243557 !important;
+    transition: ease 0.5s !important;
+}
+
+#write-icon {
+    margin-left: 2%;
+}
+
+@media (max-width: 2416px) and (min-width: 2054px) {
+    #write-review-btn {
+        width: 25%;
+    }
+
+    .reviews-headers-col:nth-child(1) {
+        grid-column: 1 / span 2;
+    }
+
+    .reviews-headers-col:nth-child(2) {
+        grid-column: 3 / span 10;
+    }
+}
+
+@media (max-width: 2053px) and (min-width: 1700px) {
+    #reviews-container {
+        width: 80%;
+        margin: 0 10%;
+    }
+
+    #write-review-btn {
+        width: 25%;
+    }
+
+    #reviews {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    .reviews-headers-col:nth-child(1) {
+        grid-column: 1 / span 2;
+    }
+
+    .reviews-headers-col:nth-child(2) {
+        grid-column: 3 / span 10;
+    }
+}
+
+@media (max-width: 1699px) and (min-width: 1200px) {
+    #reviews-container {
+        width: 80%;
+        margin: 0 10%;
+    }
+
+    #write-review-btn {
+        width: 30%;
+    }
+
+    #reviews {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    .reviews-headers-col:nth-child(1) {
+        grid-column: 1 / span 2;
+    }
+
+    .reviews-headers-col:nth-child(2) {
+        grid-column: 3 / span 10;
+    }
+}
+
+@media (max-width: 1199px) and (min-width: 992px) {
+    #reviews-container {
+        width: 80%;
+        margin: 0 10%;
+    }
+
+    #write-review-btn {
+        width: 40%;
+    }
+
+    .reviews-text {
+        margin: 5% 10% 3%;
+    }
+
+    #reviews {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .reviews-headers-col:nth-child(1) {
+        grid-column: 1 / span 2;
+    }
+
+    .reviews-headers-col:nth-child(2) {
+        grid-column: 3 / span 10;
+    }
+}
+
+@media (max-width: 991px) and (min-width: 801px) {
+    #reviews-container {
+        width: 80%;
+        margin: 0 10%;
+    }
+
+    #write-review-btn {
+        width: 45%;
+    }
+
+    .reviews-text {
+        margin: 5% 10% 3%;
+    }
+
+    #reviews {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .reviews-headers-col:nth-child(1) {
+        grid-column: 1 / span 2;
+    }
+
+    .reviews-headers-col:nth-child(2) {
+        grid-column: 3 / span 10;
+    }
+}
+
+@media (max-width: 800px) and (min-width: 768px) {
+    #reviews-container {
+        width: 80%;
+        margin: 0 10%;
+    }
+
+    #write-review-btn {
+        width: 50%;
+    }
+
+    .reviews-text {
+        margin: 5% 10% 3%;
+    }
+
+    #reviews {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .reviews-headers-col:nth-child(1) {
+        grid-column: 1 / span 2;
+    }
+
+    .reviews-headers-col:nth-child(2) {
+        grid-column: 3 / span 10;
+    }
+}
+
+@media (max-width: 767px) and (min-width: 517px) {
+    #reviews-container {
+        width: 80%;
+        margin: 0 10%;
+    }
+
+    #reviews-headers-container {
+        row-gap: 40px;
+    }
+
+    #write-review-btn {
+        width: 80%;
+        float: none;
+    }
+
+    .reviews-text {
+        margin: 5% 10% 3%;
+    }
+
+    #reviews {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .reviews-headers-col:nth-child(1) {
+        grid-column: 1 / span 12;
+        text-align: center;
+    }
+
+    .reviews-headers-col:nth-child(2) {
+        grid-column: 1 / span 12;
+        text-align: center;
+        margin-bottom: 3%;
+    }
+}
+
+@media (max-width: 516px) and (min-width: 362px) {
+    #reviews-container {
+        width: 100%;
+        margin: 0%;
+        padding: 0 5%;
+    }
+
+    #reviews-headers-container {
+        row-gap: 40px;
+    }
+
+    #write-review-btn {
+        width: 80%;
+        float: none;
+    }
+
+    .reviews-text {
+        margin: 5% 10% 3%;
+    }
+
+    #reviews {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .reviews-headers-col:nth-child(1) {
+        grid-column: 1 / span 12;
+        text-align: center;
+    }
+
+    .reviews-headers-col:nth-child(2) {
+        grid-column: 1 / span 12;
+        text-align: center;
+        margin-bottom: 3%;
+    }
+}
+
+@media (max-width: 361px) {
+    #reviews-container {
+        width: 100%;
+        margin: 0%;
+    }
+
+    #reviews-headers-container {
+        row-gap: 40px;
+    }
+
+    #write-review-btn {
+        width: 80%;
+        float: none;
+    }
+
+    .reviews-text {
+        margin: 5% 10% 3%;
+    }
+
+    #reviews {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .reviews-headers-col:nth-child(1) {
+        grid-column: 1 / span 12;
+        text-align: center;
+    }
+
+    .reviews-headers-col:nth-child(2) {
+        grid-column: 1 / span 12;
+        text-align: center;
+        margin-bottom: 3%;
+    }
+}
