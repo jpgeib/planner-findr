@@ -7,13 +7,11 @@ import "./style.css";
 
 const ForgotPassword = (props) => {
 
-    const { whichWebsite } = props;
     const { currentUser, notAuthorized } = props.auth;
     const [inputs, setInputs] = useState({ email: "" });
     const [submitted, setSubmitted] = useState(false);
     const [err, setError] = useState(null);
     // const navigate = useNavigate();
-    const site = whichWebsite(window.location.href, "zuse", "acp", "union");
 
     const handleChange = (e) => {
         setInputs(prev => ({ ...prev, [e.target.name]: e.target.value }));
@@ -22,7 +20,7 @@ const ForgotPassword = (props) => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            await axiosInstance.post(`${site}/auth/forgot`, inputs);
+            await axiosInstance.post(`/auth/forgot`, inputs);
             setSubmitted(true);
         } catch (err) {
             setError(err.response.data);

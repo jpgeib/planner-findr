@@ -1,0 +1,89 @@
+#login-container {
+    background-color: #fff;
+    width: 60%;
+    margin: 0 20%;
+    padding: 4% 0;
+    border: solid 1px #fff;
+}
+
+#login-header {
+    padding: 2%;
+    text-align: center;
+}
+
+#login-form {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    row-gap: 20px;
+}
+
+.login-form-col {
+    grid-column: 5 / span 4;
+}
+
+#login-email-input {
+    width: 100% !important;
+    padding: 0 4%;
+    font-family: "Lato", "Helvetica Neuve";
+    height: 50px;
+    font-size: 20px;
+    background-color: #f6f6f6;
+    border: solid 1px black;
+    border-radius: 5px;
+}
+
+#login-password-input {
+    width: 100% !important;
+    padding: 0 4%;
+    font-family: "Lato", "Helvetica Neuve";
+    height: 50px;
+    font-size: 20px;
+    background-color: #f6f6f6;
+    border: solid 1px black;
+    border-radius: 5px;
+}
+
+#login-submit-btn {
+    background-color: #000;
+    border: solid 1px transparent;
+    color: #fefcfd;
+    font-family: "Lato", "Helvetica Neuve";
+    cursor: pointer !important
+}
+
+@media (max-width: 1699px) {
+    #login-container {
+        width: 70%;
+        margin: 0 15%;
+    }
+}
+
+@media (max-width: 1199px) and (min-width: 992px),
+(max-width: 991px) and (min-width: 801px),
+(max-width: 800px) and (min-width: 768px) {
+    .login-form-col {
+        grid-column: 4 / span 6;
+    }
+}
+
+@media (max-width: 800px) and (min-width: 768px) {
+    #login-header {
+        margin-bottom: 5%;
+    }
+}
+
+@media (max-width: 767px) {
+    #login-header {
+        margin-bottom: 10%;
+    }
+    .login-form-col {
+        grid-column: 2 / span 10;
+    }
+}
+
+@media (max-width: 516px) {
+    #login-container {
+        width: 100%;
+        margin: 5% 0;
+    }
+}

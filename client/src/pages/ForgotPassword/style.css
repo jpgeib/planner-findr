@@ -1,0 +1,89 @@
+#forgot-container {
+    background-color: #fff;
+    width: 60%;
+    margin: 0 20%;
+    padding: 4% 0;
+    border: solid 1px #fff;
+}
+
+#forgot-header {
+    padding: 2%;
+    text-align: center;
+}
+
+#forgot-form {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    row-gap: 20px;
+}
+
+.forgot-form-col {
+    grid-column: 5 / span 4;
+}
+
+#forgot-email-input {
+    width: 100% !important;
+    padding: 0 4%;
+    font-family: "Lato", "Helvetica Neuve";
+    height: 50px;
+    font-size: 20px;
+    background-color: #f6f6f6;
+    border: solid 1px black;
+    border-radius: 5px;
+}
+
+#forgot-password-input {
+    width: 100% !important;
+    padding: 0 4%;
+    font-family: "Lato", "Helvetica Neuve";
+    height: 50px;
+    font-size: 20px;
+    background-color: #f6f6f6;
+    border: solid 1px black;
+    border-radius: 5px;
+}
+
+#forgot-submit-btn {
+    background-color: #000;
+    border: solid 1px transparent;
+    color: #fefcfd;
+    font-family: "Lato", "Helvetica Neuve";
+    cursor: pointer !important
+}
+
+@media (max-width: 1699px) {
+    #forgot-container {
+        width: 70%;
+        margin: 0 15%;
+    }
+}
+
+@media (max-width: 1199px) and (min-width: 992px),
+(max-width: 991px) and (min-width: 801px),
+(max-width: 800px) and (min-width: 768px) {
+    .forgot-form-col {
+        grid-column: 4 / span 6;
+    }
+}
+
+@media (max-width: 800px) and (min-width: 768px) {
+    #forgot-header {
+        margin-bottom: 5%;
+    }
+}
+
+@media (max-width: 767px) {
+    #forgot-header {
+        margin-bottom: 10%;
+    }
+    .forgot-form-col {
+        grid-column: 2 / span 10;
+    }
+}
+
+@media (max-width: 516px) {
+    #forgot-container {
+        width: 100%;
+        margin: 5% 0;
+    }
+}

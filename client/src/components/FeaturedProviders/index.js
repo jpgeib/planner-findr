@@ -8,11 +8,9 @@ import "./style.css";
 
 const FeaturedProviders = (props) => {
     
-    const { whichWebsite, screenWidth } = props;
+    const { screenWidth } = props;
 
     const [providers, setproviders] = useState([]);
-
-    const site = whichWebsite(window.location.href, "zuse", "acp", "union");
 
     useEffect(() => {
         const fetchData = async () => {

@@ -6,14 +6,12 @@ import "./style.css";
 
 const ResetPassword = (props) => {
 
-    const { whichWebsite } = props;
     const { currentUser, notAuthorized } = props.auth;
     const [inputs, setInputs] = useState({ newPassword: "", confirmPassword: "" });
     const [submitted, setSubmitted] = useState(false);
     const [err, setError] = useState(null);
     const navigate = useNavigate();
     const { id, token } = useParams();
-    const site = whichWebsite(window.location.href, "zuse", "acp", "union");
 
     const handleChange = (e) => {
         setInputs(prev => ({ ...prev, [e.target.name]: e.target.value }));
@@ -26,7 +24,7 @@ const ResetPassword = (props) => {
                 setError("Passwords do not match.");
                 return;
             }
-            await axiosInstance.post(`${site}/auth/reset/${id}/${token}`, inputs);
+            await axiosInstance.post(`/auth/reset/${id}/${token}`, inputs);
             setSubmitted(true);
         } catch (err) {
             setError(err.response.data);

@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { Header, Button, Message } from "semantic-ui-react";
+import { useForm } from "react-hook-form";
 import { axiosInstance } from "../../utils/api";
 
 import "./style.css";
 
 const Register = (props) => {
-    const { whichWebsite } = props;
+    
     const { currentUser, notAuthorized, alreadyLoggedIn } = props.auth;
     const [inputs, setInputs] = useState({
         first_name: "",
@@ -15,6 +16,7 @@ const Register = (props) => {
         password: ""
     });
     const [err, setError] = useState(null);
+    const { register } = useForm();
     const navigate = useNavigate();
 
     const handleChange = async (e) => {
@@ -36,13 +38,13 @@ const Register = (props) => {
     //     notAuthorized();
     // }, [currentUser]);
 
-    useEffect(() => {
-        alreadyLoggedIn();
-    }, [currentUser]);
+    // useEffect(() => {
+    //     alreadyLoggedIn();
+    // }, [currentUser]);
 
     return (
         <div id="register-container">
-            <Header id="register-header" as="h1">Register</Header>
+            <Header id="register-header" as="h1">Ready To Plan Your Next Event? Sign Up Now!</Header>
             <form onSubmit={handleSubmit} id="register-form">
                 <div className="register-form-col">
                     <input required id="register-first-name-input" onChange={handleChange} name="first_name" type="text" placeholder="First Name" />

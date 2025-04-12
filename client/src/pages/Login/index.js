@@ -36,7 +36,7 @@ const Login = (props) => {
 
     return (
         <div id="login-container">
-            <Header id="login-header" as="h1">Log In</Header>
+            <Header id="login-header" as="h1">Log In To Your Account</Header>
             <form onSubmit={handleSubmit} id="login-form">
                 <div className="login-form-col">
                     <input id="login-email-input" required onChange={handleChange} value={inputs.email} name="email" type="email" placeholder="Email" />
