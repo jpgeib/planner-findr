@@ -1,5 +1,5 @@
 import React from "react";
-import { Header } from "semantic-ui-react";
+import { Header, Button } from "semantic-ui-react";
 
 import "./style.css";
 
@@ -9,20 +9,23 @@ const HomeContactForm = () => {
             <div id="home-contact-form-container">
                 <div id="home-contact-form">
                     <div className="home-contact-form-col">
-                        <h1 id="home-contact-form-header">Contact Us</h1>
-                        <h4 id="home-contact-form-subheader">We would love to hear from you!</h4>
+                        <h1 id="home-contact-form-header">Can't Find What You're Looking For?</h1>
+                        <h4 id="home-contact-form-subheader">Let us know, and we'll help you find the right service provider</h4>
                     </div>
                     <div className="home-contact-form-col">
-                        <input id="home-contact-form-input" placeholder="Your Name" />
+                        <label className="home-contact-form-label" htmlFor="home-contact-form-input">Name</label>
+                        <input name="name" type="text" required id="home-contact-form-name-input" placeholder="Enter Name Here" />
                     </div>
                     <div className="home-contact-form-col">
-                        <input id="home-contact-form-input" placeholder="Your Email" />
+                        <label className="home-contact-form-label" htmlFor="home-contact-form-input">Email</label>
+                        <input name="name" type="email" id="home-contact-form-email-input" placeholder="Enter Email Here" />
                     </div>
                     <div className="home-contact-form-col">
-                        <textarea id="home-contact-form-textarea" placeholder="Your Message"></textarea>
+                        <label className="home-contact-form-label" htmlFor="home-contact-form-input">Service Needed</label>
+                        <input id="home-contact-form-service-input" placeholder="Enter Needed Service Here" />
                     </div>
                     <div className="home-contact-form-col">
-                        <button id="home-contact-form-submit-btn">Submit</button>
+                        <Button id="home-contact-form-submit-btn">Submit</Button>
                     </div>
                 </div>
             </div>

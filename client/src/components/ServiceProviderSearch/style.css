@@ -61,6 +61,7 @@
     width: 40%;
     height: 50px;
     border-radius: 10px;
+    cursor: pointer;
 }
 
 #service-provider-search-filter-btn {
@@ -73,4 +74,14 @@
     background-color: transparent;
     color: #fff;
     border: solid 1px #fff;
+}
+
+#service-provider-search-filter-btn:hover {
+    background-color: #fff;
+    color: #000;
+}
+
+#service-provider-search-reset-filter-btn:hover {
+    background-color: #fff;
+    color: #000;
 }
