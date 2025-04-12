@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Header, Rating, Image, Button, Icon } from "semantic-ui-react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import DeleteReviewModal from "../../components/DeleteReviewModal";
+import DeleteEventModal from "../../components/DeleteEventModal";
 import { axiosInstance } from "../../utils/api";
 import moment from "moment";
 
@@ -63,7 +63,7 @@ const SingleEvent = (props) => {
                         {screenWidth <= 516 ? "Edit " : null}
                         <Icon name="edit outline" />
                     </Button>
-                    <DeleteeventModal handleDelete={handleDelete} screenWidth={screenWidth} />
+                    <DeleteEventModal handleDelete={handleDelete} screenWidth={screenWidth} />
                 </div>
             </div>
             <div id="event">

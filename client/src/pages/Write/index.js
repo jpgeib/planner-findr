@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Header, Rating, Image } from "semantic-ui-react";
 import { useLocation, useNavigate, Link } from "react-router-dom";
-import OtherReviews from "../../components/OtherReviews";
 import { axiosInstance } from "../../utils/api";
 import moment from "moment";
 
@@ -66,13 +65,13 @@ const Write = (props) => {
         handleRate();
     }, [rating]);
 
-    if (submitted) {
-        return (
-            <>
-                <OtherReviews />
-            </>
-        );
-    }
+    // if (submitted) {
+    //     return (
+    //         <>
+    //             <OtherReviews />
+    //         </>
+    //     );
+    // }
 
     return (
         <div id="write-container">

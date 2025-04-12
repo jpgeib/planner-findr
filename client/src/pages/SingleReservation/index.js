@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Header, Rating, Image, Button, Icon } from "semantic-ui-react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import DeleteReviewModal from "../../components/DeleteReviewModal";
+import DeleteReservationModal from "../../components/DeleteReservationModal";
 import { axiosInstance } from "../../utils/api";
 import moment from "moment";
 
@@ -63,7 +63,7 @@ const SingleReservation = (props) => {
                         {screenWidth <= 516 ? "Edit " : null}
                         <Icon name="edit outline" />
                     </Button>
-                    <DeletereservationModal handleDelete={handleDelete} screenWidth={screenWidth} />
+                    <DeleteReservationModal handleDelete={handleDelete} screenWidth={screenWidth} />
                 </div>
             </div>
             <div id="reservation">
