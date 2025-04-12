@@ -70,7 +70,7 @@ const App = () => {
         <Route exact path="/provider/:id" element={<SingleProvider auth={auth} />} />
         <Route exact path="/reviews" element={<Reviews auth={auth} />} />
         <Route exact path="/review/:id" element={<SingleReview auth={auth} />} />
-        <Route exact path="/review/write" element={<WriteReview auth={auth} />} />
+        <Route exact path="/reviews/write" element={<WriteReview auth={auth} />} />
         <Route exact path="/review/:id/edit" element={<EditReview auth={auth} />} />
         <Route exact path="/contact" element={<Contact />} />
       </Routes>

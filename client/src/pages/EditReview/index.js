@@ -8,7 +8,6 @@ import "./style.css";
 
 const EditReview = (props) => {
 
-    const { whichWebsite } = props;
     const { currentUser, notAuthorized } = props.auth;
     const [review, setReview] = useState({});
     const [rating, setRating] = useState(0);
@@ -16,7 +15,6 @@ const EditReview = (props) => {
     const [file, setFile] = useState(null);
     const [userId, setUserId] = useState(null);
 
-    const site = whichWebsite(window.location.href, "zuse", "acp", "union");
     const location = useLocation();
     const navigate = useNavigate();
     const reviewId = location.pathname.split("/")[2];
@@ -25,7 +23,7 @@ const EditReview = (props) => {
         try {
             const formData = new FormData();
             formData.append("writeFile", file);
-            const res = await axiosInstance.post(`${site}/upload`, formData);
+            const res = await axiosInstance.post(`/upload`, formData);
             return res.data;
         } catch (err) {
             console.log(err);
@@ -46,7 +44,7 @@ const EditReview = (props) => {
         const imgUrl = await upload();
         try {
             if (currentUser.id !== review.uid) alert("You cannot edit someone else's review!");
-            const res = await axiosInstance.put(`${site}/reviews/${reviewId}`, {
+            const res = await axiosInstance.put(`/reviews/${reviewId}`, {
                 rating: rating,
                 text: text,
                 date: moment().format("YYYY-MM-DD"),
@@ -70,7 +68,7 @@ const EditReview = (props) => {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const res = await axiosInstance.get(`${site}/reviews/${reviewId}`);
+                const res = await axiosInstance.get(`/reviews/${reviewId}`);
                 setReview(res.data);
             } catch (err) {
                 console.log(err);

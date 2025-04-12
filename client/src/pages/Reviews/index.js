@@ -29,7 +29,7 @@ const Reviews = (props) => {
                     <Header as="h1" id="reviews-header">Reviews</Header>
                 </div>
                 <div className="reviews-headers-col">
-                    <Button as={Link} to="/write" size="massive" icon labelPosition="right" id="write-review-btn">Write A Review<Icon id="write-icon" name="edit" /></Button>
+                    <Button as={Link} to="/reviews/write" size="massive" icon labelPosition="right" id="write-review-btn">Write A Review<Icon id="write-icon" name="edit" /></Button>
                 </div>
             </div>
             <p className="reviews-text">{reviews.length > 0 ? "Don't take our word for it, listen to our satisfied customers!" : "Looks like we don't have any reviews yet, you could be the first!"}</p>

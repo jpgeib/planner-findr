@@ -104,17 +104,18 @@
 }
 
 #write-review-btn {
-    background-color: #f11515 !important;
+    background-color: #000 !important;
     color: white !important;
     font-size: 18px !important;
     width: 20%;
     float: right;
-    transition: ease 0.5s !important;
+    border: solid 1px #000 !important;
 }
 
 #write-review-btn:hover {
-    background-color: #243557 !important;
-    transition: ease 0.5s !important;
+    background-color: transparent !important;
+    color: #000 !important;
+    border: solid 1px #000 !important;
 }
 
 #write-icon {

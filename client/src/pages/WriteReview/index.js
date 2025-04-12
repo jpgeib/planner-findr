@@ -8,21 +8,19 @@ import "./style.css";
 
 const WriteReview = (props) => {
 
-    const { whichWebsite } = props;
     const { currentUser, notAuthorized } = props.auth;
     const [rating, setRating] = useState(0);
     const [text, setText] = useState("");
     const [file, setFile] = useState(null);
     const [submitted, setSubmitted] = useState(false);
 
-    const site = whichWebsite(window.location.href, "zuse", "acp", "union");
     const navigate = useNavigate();
 
     const upload = async () => {
         try {
             const formData = new FormData();
             formData.append("writeFile", file);
-            const res = await axiosInstance.post(`${site}/upload`, formData);
+            const res = await axiosInstance.post(`/upload`, formData);
             return res.data;
         } catch (err) {
             console.log(err);
@@ -42,7 +40,7 @@ const WriteReview = (props) => {
         e.preventDefault();
         const imgUrl = await upload();
         try {
-            const res = await axiosInstance.post(`${site}/reviews`, {
+            const res = await axiosInstance.post(`/reviews`, {
                 rating: rating,
                 text: text,
                 date: moment().format("YYYY-MM-DD"),
