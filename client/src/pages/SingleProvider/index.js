@@ -62,17 +62,17 @@ const SingleProvider = (props) => {
                 <div id="provider-reviews">
                     {reviews.map((review, index) => {
                         return (
-                            review.pid !== provider.id ? null : <div key={review.id} className="review-card-col">
+                            review.pid !== provider.id ? null : <div key={review.id} className="provider-review-card-col">
                                 {/* <Link to={`/review/${review.id}`}> */}
-                                <div className="review-card">
-                                    <Image className="review-card-image" src={review.image} draggable="false" />
-                                    <Rating className="review-card-rating" maxRating={5} rating={review.rating} icon="star" size="huge" disabled />
-                                    <div className="review-card-text">{review.text}</div>
-                                    <div className="review-card-author">
+                                <div className="provider-review-card">
+                                    <Image className="provider-review-card-image" src={review.image} draggable="false" />
+                                    <Rating className="provider-review-card-rating" maxRating={5} rating={review.rating} icon="star" size="huge" disabled />
+                                    <div className="provider-review-card-text">{review.text}</div>
+                                    <div className="provider-review-card-author">
                                         <Image src={review.profile_image} size="mini" circular />
-                                        <div className="review-card-author-name">{review.first_name} {review.last_name}</div>
+                                        <div className="provider-review-card-author-name">{review.first_name} {review.last_name}</div>
                                     </div>
-                                    <div className="review-card-date">{moment(review.date).format("MMMM Do YYYY")}</div>
+                                    <div className="provider-review-card-date">{moment(review.date).format("MMMM Do YYYY")}</div>
                                 </div>
                                 {/* </Link> */}
                             </div>
