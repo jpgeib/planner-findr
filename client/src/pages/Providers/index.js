@@ -33,14 +33,14 @@ const Providers = (props) => {
                 {providers.map((provider, index) => {
                     return (
                         <div key={index} className="provider-card-col">
-                            {/* <Link to={`/provider/${provider.id}`}> */}
+                            <Link to={`/provider/${provider.id}`}>
                                 <div className="provider-card">
                                     <Image className="provider-card-image" src={provider.service_image} draggable="false" />
                                     <div className="provider-card-service">{provider.service}</div>
                                     <div className="provider-card-rate">${provider.pay_rate}/hr</div>
                                     <div className="provider-card-distance">{provider.distance <= 1 ? `${provider.distance} mile away` : `${provider.distance} miles away`}</div>
                                 </div>
-                            {/* </Link> */}
+                            </Link>
                         </div>
                     );
                 })}

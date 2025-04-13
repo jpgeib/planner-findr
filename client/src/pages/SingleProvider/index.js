@@ -10,7 +10,7 @@ import "./style.css";
 const SingleProvider = (props) => {
 
     const { currentUser, notAuthorized } = props.auth;
-    const { whichWebsite, screenWidth } = props;
+    const { screenWidth } = props;
     const [provider, setProvider] = useState({});
 
     const location = useLocation();
@@ -30,50 +30,27 @@ const SingleProvider = (props) => {
         fetchData();
     }, [providerId]);
 
-    const handleAccess = async () => {
-        if (currentUser === null || currentUser.id !== provider.uid) {
-            alert("You cannot edit someone else's provider!");
-        } else {
-            navigate(`/edit/${providerId}`);
-        }
-    };
-
-    const handleDelete = async () => {
-        try {
-            if (currentUser === null || currentUser.id !== provider.uid) alert("You cannot delete someone else's provider!");
-            await axiosInstance.delete(`/providers/${providerId}`);
-            navigate("/providers");
-        } catch (err) {
-            console.log(err);
-        }
-    };
-
     // useEffect(() => {
     //     notAuthorized();
     // }, [currentUser]);
 
     return (
         <div id="provider-container">
-            <div id="provider-header-container">
-                <div className="provider-header-col">
-                    <Header as="h1" id="provider-header">{provider.first_name} {provider.last_name} Said</Header>
-                </div>
-                <div className="provider-header-col">
-                    <Button id="provider-edit-btn" onClick={handleAccess} icon>
-                        {screenWidth <= 516 ? "Edit " : null}
-                        <Icon name="edit outline" />
-                    </Button>
-                    {/* <DeleteProviderModal handleDelete={handleDelete} screenWidth={screenWidth} /> */}
-                </div>
-            </div>
-            <div id="provider">
-                <div className="provider-col">
-                    <Rating id="provider-rating" maxRating={5} rating={provider.rating} icon="star" size="massive" disabled />
-                    <p id="provider-text">{provider.text}</p>
-                    <p id="provider-date">{moment(provider.date).format("MMMM Do YYYY")}</p>
-                </div>
-                <div className="provider-col">
-                    <Image src={provider.image} draggable="false" />
+            <div id="provider-banner-container">
+                <div id="provider-banner">
+                    <div className="provider-banner-col">
+                        <Image id="provider-banner-profile-image" src={provider.service_image} draggable="false" />
+                    </div>
+                    <div className="provider-banner-col">
+                        <Header id="provider-service" as="h2">{provider.service}</Header>
+                        <Header id="provider-type" as="h4">{provider.type}</Header>
+                        <Header id="provider-rate" as="h2">${provider.pay_rate}/hr</Header>
+                        
+                    </div>
+                    <div className="provider-banner-col">
+                        <Button id="provider-request-booking-btn">Request Booking</Button>
+                        <Button id="provider-message-btn">Message</Button>
+                    </div>
                 </div>
             </div>
         </div>

@@ -1,0 +1,63 @@
+#provider-banner-container {
+    background-color: #666666;
+    padding: 2%;
+}
+
+#provider-banner {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    column-gap: 20px;
+    row-gap: 20px;
+    width: 60%;
+    margin: 0 auto;
+}
+
+.provider-banner-col:nth-child(1) {
+    grid-column: 1 / span 3;
+}
+
+.provider-banner-col:nth-child(2) {
+    grid-column: 4 / span 5;
+}
+
+.provider-banner-col:nth-child(3) {
+    grid-column: 10 / span 5;
+}
+
+#provider-banner-profile-image {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 50%;
+    overflow: hidden;
+    display: block;
+}
+
+#provider-service, #provider-type,
+#provider-rate {
+    color: white;
+}
+
+#provider-request-booking-btn,
+#provider-message-btn {
+    display: block;
+    width: 100%;
+    margin: 5%;
+}
+
+#provider-request-booking-btn {
+    background-color: transparent;
+    color: #fff;
+    border: solid 1px #fff;
+}
+
+#provider-request-booking-btn:hover {
+    background-color: #fff;
+    color: black;
+}
+
+#provider-message-btn {
+    background-color: black;
+    color: #fff;
+    border: solid 1px black;
+}
