@@ -5,24 +5,9 @@
     border: solid 1px #fff;
 }
 
-#providers-headers-container {
-    display: grid;
-    grid-template-columns: repeat(12, 1fr);
-    row-gap: 20px;
-    width: 96%;
-    margin: 2% 2%;
-}
-
-.providers-headers-col:nth-child(1) {
-    grid-column: 1 / span 2;
-}
-
-.providers-headers-col:nth-child(2) {
-    grid-column: 3 / span 10;
-}
-
 #providers-header {
     padding: 2%;
+    text-align: center;
 }
 
 .providers-text {
@@ -101,6 +86,10 @@
 .provider-card-service {
     color: black;
     margin: 5% 0;
+}
+
+.provider-card-distance {
+    color: black;
 }
 
 .provider-card-rate {

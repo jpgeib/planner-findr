@@ -24,23 +24,16 @@ const Reviews = (props) => {
 
     return (
         <div id="reviews-container">
-            <div id="reviews-headers-container">
-                <div className="reviews-headers-col">
-                    <Header as="h1" id="reviews-header">Reviews</Header>
-                </div>
-                <div className="reviews-headers-col">
-                    <Button as={Link} to="/reviews/write" size="massive" icon labelPosition="right" id="write-review-btn">Write A Review<Icon id="write-icon" name="edit" /></Button>
-                </div>
-            </div>
+            <Header as="h1" id="reviews-header">Reviews</Header>
             <p className="reviews-text">{reviews.length > 0 ? "Don't take our word for it, listen to our satisfied customers!" : "Looks like we don't have any reviews yet, you could be the first!"}</p>
             {reviews.length > 0 ? null : <div id="reviews-no-result-container">
-                <Image id="reviews-no-result-image" src="https://zuse-inc-bucket.s3.amazonaws.com/no-results-blue.png"  />
+                <Image id="reviews-no-result-image" src="https://zuse-inc-bucket.s3.amazonaws.com/no-results-blue.png" />
             </div>}
             <div id="reviews">
                 {reviews.map((review, index) => {
                     return (
                         review.rating < 3 ? null : <div key={review.id} className="review-card-col">
-                            <Link to={`/review/${review.id}`}>
+                            {/* <Link to={`/review/${review.id}`}> */}
                                 <div className="review-card">
                                     <Image className="review-card-image" src={review.image} draggable="false" />
                                     <Rating className="review-card-rating" maxRating={5} rating={review.rating} icon="star" size="huge" disabled />
@@ -51,7 +44,7 @@ const Reviews = (props) => {
                                     </div>
                                     <div className="review-card-date">{moment(review.date).format("MMMM Do YYYY")}</div>
                                 </div>
-                            </Link>
+                            {/* </Link> */}
                         </div>
                     );
                 })}

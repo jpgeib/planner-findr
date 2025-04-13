@@ -92,6 +92,10 @@
     font-weight: 700;
 }
 
+.featured-provider-card-distance {
+    color: black;
+}
+
 #featured-providers-btn {
     background-color: black !important;
     color: white !important;

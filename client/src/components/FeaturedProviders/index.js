@@ -36,13 +36,14 @@ const FeaturedProviders = (props) => {
                     const providerIndex = 4;
                     return (
                         (index >= providerIndex ? null : <div key={index} className="featured-provider-card-col">
-                            <Link to={`/provider/${provider.id}`}>
+                            {/* <Link to={`/provider/${provider.id}`}> */}
                                 <div className="featured-provider-card">
                                     <Image className="featured-provider-card-image" src={provider.service_image} draggable="false" />
                                     <div className="featured-provider-card-service">{provider.service}</div>
                                     <div className="featured-provider-card-rate">${provider.pay_rate}/hr</div>
+                                    <div className="featured-provider-card-distance">{provider.distance <= 1 ? `${provider.distance} mile away` : `${provider.distance} miles away`}</div>
                                 </div>
-                            </Link>
+                            {/* </Link> */}
                         </div>
                     ));
                 })}
