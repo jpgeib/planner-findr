@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Header, Rating, Image, Button, Icon } from "semantic-ui-react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
+import ReservationRequest from "../../components/ReservationRequest";
 // import DeleteProviderModal from "../../components/DeleteProviderModal";
 import { axiosInstance } from "../../utils/api";
 import moment from "moment";
@@ -80,6 +81,7 @@ const SingleProvider = (props) => {
                     })}
                 </div>
             </div>
+            <ReservationRequest />
         </div>
     );
 }

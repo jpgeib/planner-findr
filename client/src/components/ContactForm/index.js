@@ -3,7 +3,7 @@ import { Header, Button } from "semantic-ui-react";
 
 import "./style.css";
 
-const HomeContactForm = () => {
+const ContactForm = () => {
     return (
         <>
             <div id="contact-form-container">
@@ -18,11 +18,11 @@ const HomeContactForm = () => {
                     </div>
                     <div className="contact-form-col">
                         <label className="contact-form-label" htmlFor="contact-form-input">Email</label>
-                        <input name="name" type="email" id="contact-form-email-input" placeholder="Enter Email Here" />
+                        <input name="email" type="email" id="contact-form-email-input" placeholder="Enter Email Here" />
                     </div>
                     <div className="contact-form-col">
                         <label className="contact-form-label" htmlFor="contact-form-input">Service Needed</label>
-                        <input id="contact-form-service-input" placeholder="Enter Needed Service Here" />
+                        <input name="service" type="text" id="contact-form-service-input" placeholder="Enter Needed Service Here" />
                     </div>
                     <div className="contact-form-col">
                         <Button id="contact-form-submit-btn">Submit</Button>
@@ -33,4 +33,4 @@ const HomeContactForm = () => {
     );
 };
 
-export default HomeContactForm;
+export default ContactForm;

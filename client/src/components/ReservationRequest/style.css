@@ -1,0 +1,60 @@
+#reservation-request-container {
+    padding: 5%;
+}
+
+#reservation-request {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    width: 50%;
+    margin: 0 auto;
+}
+
+#reservation-request-header {
+    text-align: center;
+    margin-bottom: 2%;
+}
+
+#reservation-request-subheader {
+    text-align: center;
+    margin-bottom: 5%;
+}
+
+.reservation-request-col:nth-child(2),
+.reservation-request-col:nth-child(3),
+.reservation-request-col:nth-child(4) {
+    width: 60%;
+    margin: 0 auto;
+}
+
+.reservation-request-label {
+    display: block;
+    font-weight: 700;
+    margin-bottom: 1%;
+}
+
+#reservation-request-date-input,
+#reservation-request-time-input {
+    width: 100%;
+    padding: 1%;
+    margin-bottom: 2%;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    height: 40px;
+}
+
+#reservation-request-submit-btn {
+    margin: 5% 30%;
+    width: 40%;
+    height: 50px;
+    border-radius: 10px;
+    background-color: #000;
+    color: #fff;
+    border: solid 1px #000;
+    cursor: pointer;
+}
+
+#reservation-request-submit-btn:hover {
+    background-color: #fff;
+    color: #000;
+    border: solid 1px #000;
+}
