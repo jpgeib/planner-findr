@@ -62,9 +62,9 @@ const App = () => {
         <Route exact path="/forgot" element={<ForgotPassword auth={auth} />} />
         <Route exact path="/reset/:id/:token" element={<ResetPassword auth={auth} />} />
         <Route exact path="/profile/:id" element={<Profile auth={auth} />} />
-        <Route exact path="/events" element={<Events auth={auth} />} />
+        {/* <Route exact path="/events" element={<Events auth={auth} />} /> */}
         <Route exact path="/event/:id" element={<SingleEvent auth={auth} />} />
-        <Route exact path="/reservations" element={<Reservations auth={auth} />} />
+        {/* <Route exact path="/reservations" element={<Reservations auth={auth} />} /> */}
         <Route exact path="/reservation/:id" element={<SingleReservation auth={auth} />} />
         <Route exact path="/providers" element={<Providers auth={auth} />} />
         <Route exact path="/provider/:id" element={<SingleProvider auth={auth} />} />

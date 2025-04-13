@@ -36,7 +36,7 @@ const Navbar = (props) => {
                 >
                     About
                 </Menu.Item>
-                <Menu.Item
+                {/* <Menu.Item
                     className="header-nav-item"
                     as={Link}
                     to="/events"
@@ -51,7 +51,7 @@ const Navbar = (props) => {
                     name="reservations"
                 >
                     Reservations
-                </Menu.Item>
+                </Menu.Item> */}
                 <Menu.Item
                     className="header-nav-item"
                     as={Link}

@@ -22,6 +22,8 @@ const Reviews = (props) => {
         fetchData();
     }, []);
 
+    console.log(reviews);
+
     return (
         <div id="reviews-container">
             <Header as="h1" id="reviews-header">Reviews</Header>
