@@ -1,0 +1,26 @@
+#about-container {
+    padding: 3%;
+}
+
+#about {
+    width: 50%;
+    margin: 0 auto;
+}
+
+.about-section {
+    margin-bottom: 10%;
+}
+
+.about-text {
+    font-size: 18px;
+}
+
+.about-how-it-works-list-item {
+    margin-bottom: 1%;
+    font-size: 18px;
+}
+
+.about-why-choose-list-item {
+    margin-bottom: 1%;
+    font-size: 18px;
+}
