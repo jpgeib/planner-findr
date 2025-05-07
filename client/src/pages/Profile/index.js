@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Header, Rating, Image, Button, Icon } from "semantic-ui-react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import ProfileReviews from "../../components/ProfileReviews";
+import ProfileEvents from "../../components/ProfileEvents";
 // import ReservationRequest from "../../components/ReservationRequest";
 // import DeleteProviderModal from "../../components/DeleteProviderModal";
 import { axiosInstance } from "../../utils/api";
@@ -78,21 +79,7 @@ const Profile = (props) => {
                     </div>
                     <div className="profile-col">
                         <Header as="h2">My Events</Header>
-                        <div id="profile-events">
-                            {events.map((event, index) => {
-                                return (
-                                    event.event_uid !== currentUser.id ? null : <div key={index} className="profile-event-card-col">
-                                        <Link to={`/event/${event.id}`}>
-                                            <div className="profile-event-card">
-                                                <Image className="profile-event-card-image" src={event.event_image} draggable="false" />
-                                                <div className="profile-event-card-name">{event.name}</div>
-                                                <div className="profile-event-card-date">{moment(event.date).format("MMMM Do YYYY")}</div>
-                                            </div>
-                                        </Link>
-                                    </div>
-                                );
-                            })}
-                        </div>
+                        <ProfileEvents currentUser={currentUser} />
                     </div>
                     <div className="profile-col">
                         <Header as="h2">My Reviews</Header>
