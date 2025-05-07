@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Header, Rating, Image, Button, Icon } from "semantic-ui-react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
+import ProfileReviews from "../../components/ProfileReviews";
 // import ReservationRequest from "../../components/ReservationRequest";
 // import DeleteProviderModal from "../../components/DeleteProviderModal";
 import { axiosInstance } from "../../utils/api";
@@ -12,16 +13,18 @@ const Profile = (props) => {
 
     const { currentUser, notAuthorized } = props.auth;
     const { screenWidth } = props;
-    const [provider, setProviders] = useState([]);
     const [reviews, setReviews] = useState([]);
     const [reservations, setReservations] = useState([]);
     const [events, setEvents] = useState([]);
+    console.log(events);
 
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const res = await axiosInstance.get("/reviews");
-                setReviews(res.data);
+                const resReviews = await axiosInstance.get("/reviews");
+                const resEvents = await axiosInstance.get("/events");
+                setReviews(resReviews.data);
+                setEvents(resEvents.data);
             } catch (err) {
                 console.log(err);
             };
@@ -78,13 +81,12 @@ const Profile = (props) => {
                         <div id="profile-events">
                             {events.map((event, index) => {
                                 return (
-                                    <div key={index} className="event-card-col">
+                                    event.event_uid !== currentUser.id ? null : <div key={index} className="profile-event-card-col">
                                         <Link to={`/event/${event.id}`}>
-                                            <div className="event-card">
-                                                <Image className="event-card-image" src={event.service_image} draggable="false" />
-                                                <div className="event-card-service">{event.service}</div>
-                                                <div className="event-card-rate">${event.pay_rate}/hr</div>
-                                                <div className="event-card-distance">{event.distance <= 1 ? `${event.distance} mile away` : `${event.distance} miles away`}</div>
+                                            <div className="profile-event-card">
+                                                <Image className="profile-event-card-image" src={event.event_image} draggable="false" />
+                                                <div className="profile-event-card-name">{event.name}</div>
+                                                <div className="profile-event-card-date">{moment(event.date).format("MMMM Do YYYY")}</div>
                                             </div>
                                         </Link>
                                     </div>
@@ -94,27 +96,7 @@ const Profile = (props) => {
                     </div>
                     <div className="profile-col">
                         <Header as="h2">My Reviews</Header>
-                        <div id="profile-reviews">
-                            {reviews.map((review, index) => {
-                                return (
-                                    review.uid !== currentUser.id ? null : <div key={review.id} className="profile-review-card-col">
-                                        {/* <Link to={`/review/${review.id}`}> */}
-                                        <div className="profile-review-card">
-                                            <Image className="profile-review-card-image" src={review.image} draggable="false" />
-                                            <Rating className="profile-review-card-rating" maxRating={5} rating={review.rating} icon="star" size="huge" disabled />
-                                            <div className="profile-review-card-text">{review.text}</div>
-                                            <div className="profile-review-card-author">
-                                                <Image src={review.profile_image} size="mini" circular />
-                                                <div className="profile-review-card-author-name">{review.first_name} {review.last_name}</div>
-                                            </div>
-                                            <div className="profile-review-card-date">{moment(review.date).format("MMMM Do YYYY")}</div>
-                                        </div>
-                                        {/* </Link> */}
-                                    </div>
-                                );
-                            })}
-                        </div>
-
+                        <ProfileReviews currentUser={currentUser} />
                     </div>
                 </div>
             </div>
