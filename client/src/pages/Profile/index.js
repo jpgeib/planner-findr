@@ -3,6 +3,7 @@ import { Header, Rating, Image, Button, Icon } from "semantic-ui-react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import ProfileReviews from "../../components/ProfileReviews";
 import ProfileEvents from "../../components/ProfileEvents";
+import ProfileReservations from "../../components/ProfileReservations";
 // import ReservationRequest from "../../components/ReservationRequest";
 // import DeleteProviderModal from "../../components/DeleteProviderModal";
 import { axiosInstance } from "../../utils/api";
@@ -60,22 +61,7 @@ const Profile = (props) => {
                     </div>
                     <div className="profile-col">
                         <Header as="h2">My Reservations</Header>
-                        <div id="profile-reservations">
-                            {reservations.map((reservation, index) => {
-                                return (
-                                    <div key={index} className="reservation-card-col">
-                                        <Link to={`/reservation/${reservation.id}`}>
-                                            <div className="reservation-card">
-                                                <Image className="reservation-card-image" src={reservation.service_image} draggable="false" />
-                                                <div className="reservation-card-service">{reservation.service}</div>
-                                                <div className="reservation-card-rate">${reservation.pay_rate}/hr</div>
-                                                <div className="reservation-card-distance">{reservation.distance <= 1 ? `${reservation.distance} mile away` : `${reservation.distance} miles away`}</div>
-                                            </div>
-                                        </Link>
-                                    </div>
-                                );
-                            })}
-                        </div>
+                        <ProfileReservations currentUser={currentUser} />
                     </div>
                     <div className="profile-col">
                         <Header as="h2">My Events</Header>

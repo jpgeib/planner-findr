@@ -1,4 +1,4 @@
-#profile-events {
+#profile-reservations {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     column-gap: 20px;
@@ -6,7 +6,7 @@
     padding: 2% 3%;
 }
 
-.profile-event-card {
+.profile-reservation-card {
     border: solid 1px #d2caca;
     border-radius: 5px;
     padding: 5%;
@@ -15,11 +15,11 @@
     background-color: #faf9f7;
 }
 
-.profile-event-card:hover {
+.profile-reservation-card:hover {
     transform: scale(1.05);
 }
 
-.profile-event-card-image {
+.profile-reservation-card-image {
     margin: 2% 0;
     width: 100%;
     height: 200px;
@@ -28,14 +28,14 @@
     margin-bottom: 10%!important;
 }
 
-.profile-event-card-name,
-.profile-event-card-date {
+.profile-reservation-card-name,
+.profile-reservation-card-date {
     color: black;
     margin: 5% 0;
     text-align: center;
 }
 
-.profile-event-card-name {
+.profile-reservation-card-name {
     font-size: 24px;
     font-weight: bold;
 }
