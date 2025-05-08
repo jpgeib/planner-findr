@@ -86,6 +86,10 @@
 }
 
 @media (max-width: 767px) {
+    #contact-form-container {
+        padding: 10%;
+    }
+
     #contact-form {
         width: 90%;
     }

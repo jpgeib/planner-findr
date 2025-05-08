@@ -112,10 +112,6 @@
 }
 
 @media (max-width: 2053px) and (min-width: 1700px) {
-    #write-featured-provider-btn {
-        width: 25%;
-    }
-
     #featured-providers {
         grid-template-columns: repeat(4, 1fr);
         width: 70%;
@@ -129,7 +125,7 @@
     }
 
     #featured-providers {
-        grid-template-columns: repeat(5, 1fr);
+        grid-template-columns: repeat(4, 1fr);
         width: 90%;
         margin: 0 5%;
     }
@@ -182,8 +178,10 @@
 }
 
 @media (max-width: 800px) and (min-width: 768px) {
-    #write-featured-provider-btn {
-        width: 50%;
+    #featured-providers-header {
+        width: 100%;
+        margin: 0% 0% 5%;
+        text-align: center;
     }
 
     .featured-providers-text {
@@ -198,11 +196,21 @@
 
     #featured-providers-btn {
         width: 30%;
-        margin: 0 35% 2%;
+        margin: 3% 35% 2%;
     }
 }
 
 @media (max-width: 767px) and (min-width: 517px) {
+    #featured-providers-header {
+        width: 100%;
+        margin: 0% 0% 5%;
+        text-align: center;
+    }
+
+    .featured-provider-card {
+        height: 390px;
+    }
+    
     .featured-providers-text {
         margin: 5% 10% 3%;
     }
@@ -215,14 +223,19 @@
 
     #featured-providers-btn {
         width: 40%;
-        margin: 0 30% 2%;
+        margin: 3% 30% 2%;
     }
 }
 
 @media (max-width: 516px) and (min-width: 362px) {
-    #write-featured-provider-btn {
-        width: 80%;
-        float: none;
+    #featured-providers-container {
+        padding: 10% 0;
+    }
+
+    #featured-providers-header {
+        width: 100%;
+        margin: 0% 0% 5%;
+        text-align: center;
     }
 
     .featured-providers-text {
@@ -237,11 +250,21 @@
 
     #featured-providers-btn {
         width: 60%;
-        margin: 3% 20% 5%;
+        margin: 5% 20% 5%;
     }
 }
 
 @media (max-width: 361px) {
+    #featured-providers-container {
+        padding: 10% 0;
+    }
+
+    #featured-providers-header {
+        width: 100%;
+        margin: 0% 0% 5%;
+        text-align: center;
+    }
+
     .featured-providers-text {
         margin: 5% 10% 3%;
     }
@@ -249,7 +272,7 @@
     #featured-providers {
         grid-template-columns: repeat(1, 1fr);
         width: 90%;
-        margin: 0 5%;
+        margin: 2% 5%;
     }
 
     #featured-providers-btn {
