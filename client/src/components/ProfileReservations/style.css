@@ -1,6 +1,6 @@
 #profile-reservations {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(5, 1fr);
     column-gap: 20px;
     row-gap: 20px;
     padding: 2% 3%;
@@ -39,4 +39,36 @@
 .profile-reservation-card-provider {
     font-size: 24px;
     font-weight: bold;
+}
+
+@media (max-width: 2053px) and (min-width: 1700px) {
+    #profile-reservations {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+@media (max-width: 1699px) and (min-width: 1200px) {
+    #profile-reservations {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+@media (max-width: 1199px) and (min-width: 992px) {
+    #profile-reservations {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 991px) and (min-width: 768px) {
+    #profile-reservations {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 767px) {
+    #profile-reservations {
+        width: 80%;
+        margin: 0 auto;
+        grid-template-columns: repeat(1, 1fr);
+    }
 }
