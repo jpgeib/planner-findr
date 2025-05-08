@@ -32,8 +32,7 @@ const FeaturedProviders = (props) => {
             </div>}
             <div id="featured-providers">
                 {providers.map((provider, index) => {
-                    // const providerIndex = screenWidth > 1199 ? 4 : 6;
-                    const providerIndex = 4;
+                    const providerIndex = screenWidth > 1199 || screenWidth < 992 ? 4 : 3;
                     return (
                         (index >= providerIndex ? null : <div key={index} className="featured-provider-card-col">
                             <Link to={`/provider/${provider.id}`}>
