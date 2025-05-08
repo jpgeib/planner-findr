@@ -83,3 +83,23 @@
         width: 80%;
     }
 }
+
+@media (max-width: 767px) {
+    #contact-form {
+        width: 90%;
+    }
+
+    #contact-form-header {
+        font-size: 24px;
+    }
+
+    #contact-form-subheader {
+        font-size: 18px;
+    }
+
+    .contact-form-col:nth-child(2),
+    .contact-form-col:nth-child(3),
+    .contact-form-col:nth-child(4) {
+        width: 100%;
+    }
+}

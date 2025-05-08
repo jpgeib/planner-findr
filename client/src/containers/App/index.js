@@ -56,7 +56,7 @@ const App = () => {
     <>
       {width >= 992? <Navbar auth={auth} /> : <MobileNavbar auth={auth} screenWidth={width} />}
       <Sidebar.Pushable>
-        <Sidebar.Pusher dimmed={false} style={{ minHeight: "100vh" }}>
+        <Sidebar.Pusher>
           <Routes>
             <Route exact path="/" element={<Home auth={auth} screenWidth={width} />} />
             <Route exact path="/about" element={<About />} />
