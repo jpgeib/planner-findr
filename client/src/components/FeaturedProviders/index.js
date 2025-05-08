@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Button, Image, Rating, Header } from "semantic-ui-react";
 import { axiosInstance } from "../../utils/api";
-import moment from "moment";
 
 import "./style.css";
 
