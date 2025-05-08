@@ -11,7 +11,7 @@
     border-radius: 5px;
     padding: 5%;
     transition: transform .5s;
-    height: 320px;
+    height: 360px;
     background-color: #faf9f7;
 }
 
@@ -28,14 +28,15 @@
     margin-bottom: 10%!important;
 }
 
-.profile-reservation-card-name,
+.profile-reservation-card-provider,
+.profile-reservation-card-role,
 .profile-reservation-card-date {
     color: black;
     margin: 5% 0;
     text-align: center;
 }
 
-.profile-reservation-card-name {
+.profile-reservation-card-provider {
     font-size: 24px;
     font-weight: bold;
 }

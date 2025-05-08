@@ -22,7 +22,7 @@ const ProfileReservations = (props) => {
         };
         fetchData();
     }, []);
-
+    console.log(reservations);
     return (
         <div id="profile-reservations">
             {reservations.map((reservation, index) => {
@@ -30,8 +30,9 @@ const ProfileReservations = (props) => {
                     reservation.reservation_uid !== currentUser.id ? null : <div key={index} className="profile-reservation-card-col">
                         {/* <Link to={`/reservation/${reservation.id}`}> */}
                             <div className="profile-reservation-card">
-                                <Image className="profile-reservation-card-image" src={reservation.reservation_image} draggable="false" />
-                                <div className="profile-reservation-card-name">{reservation.name}</div>
+                                <Image className="profile-reservation-card-image" src={reservation.provider_image} draggable="false" />
+                                <div className="profile-reservation-card-provider">{reservation.provider}</div>
+                                <div className="profile-reservation-card-role">{reservation.role} for {reservation.event}</div>
                                 <div className="profile-reservation-card-date">{moment(reservation.date).format("MMMM Do YYYY")}</div>
                             </div>
                         {/* </Link> */}
