@@ -59,3 +59,27 @@
     color: #000;
     border: solid 1px #000;
 }
+
+#thank-you-container {
+    width: 50%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+@media (max-width: 1699px) and (min-width: 1200px) {
+    #contact-form {
+        width: 60%;
+    }
+}
+
+@media (max-width: 1199px) and (min-width: 992px) {
+    #contact-form {
+        width: 70%;
+    }
+}
+
+@media (max-width: 991px) and (min-width: 768px) {
+    #contact-form {
+        width: 80%;
+    }
+}
