@@ -5,7 +5,7 @@
 #reservation-request {
     display: grid;
     grid-template-columns: repeat(1, 1fr);
-    width: 50%;
+    width: 40%;
     margin: 0 auto;
 }
 
@@ -57,4 +57,59 @@
     background-color: #fff;
     color: #000;
     border: solid 1px #000;
+}
+
+@media (max-width: 2053px) and (min-width: 1700px) {
+    #reservation-request {
+        width: 50%;
+    }
+}
+
+@media (max-width: 1699px) and (min-width: 1200px) {
+    #reservation-request {
+        width: 60%;
+    }
+}
+
+@media (max-width: 1199px) and (min-width: 992px) {
+    #reservation-request {
+        width: 70%;
+    }
+}
+
+@media (max-width: 991px) and (min-width: 768px) {
+    #reservation-request {
+        width: 90%;
+    }
+}
+
+@media (max-width: 767px) and (min-width: 362px) {
+
+    .reservation-request-col:nth-child(2),
+    .reservation-request-col:nth-child(3),
+    .reservation-request-col:nth-child(4) {
+        width: 80%;
+        margin: 0 auto;
+    }
+
+    #reservation-request {
+        width: 100%;
+    }
+}
+
+@media (max-width: 361px) {
+    #reservation-request-container {
+        padding: 10%;
+    }
+
+    #reservation-request {
+        width: 100%;
+    }
+
+    .reservation-request-col:nth-child(2),
+    .reservation-request-col:nth-child(3),
+    .reservation-request-col:nth-child(4) {
+        width: 100%;
+        margin: 0 auto;
+    }
 }
