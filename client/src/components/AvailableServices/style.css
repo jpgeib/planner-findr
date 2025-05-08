@@ -41,3 +41,16 @@
     margin-top: 1%!important;
     color: #afafaf!important;
 }
+
+@media (max-width: 1699px) and (min-width: 1200px) {
+
+    #available-services-subheader {
+        text-align: center;
+        font-size: 16px;
+        margin-bottom: 5%;
+    }
+
+    #available-services {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
