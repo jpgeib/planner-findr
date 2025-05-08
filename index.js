@@ -40,6 +40,7 @@ app.use(helmet({
             ...helmet.contentSecurityPolicy.getDefaultDirectives(),
             "connect-src": [
                 "'self'",
+                "www.formbackend.com",
                 "planner-findr-6e71ae3fb693.herokuapp.com",
             ],
             "frame-src": [
@@ -51,6 +52,10 @@ app.use(helmet({
                 "'self'",
                 "plannerfindr.s3.amazonaws.com",
                 "plannerfindr.s3.us-east-1.amazonaws.com"
+            ],
+            "form-action": [
+                "'self'", 
+                "www.formbackend.com"
             ],
         }
     }

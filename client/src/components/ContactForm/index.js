@@ -1,9 +1,19 @@
-import React from "react";
+import React, { useState } from "react";
+import { useForm } from "react-hook-form";
 import { Header, Button } from "semantic-ui-react";
 
 import "./style.css";
 
 const ContactForm = () => {
+
+    const [submitted, setSubmitted] = useState(false);
+    const { register } = useForm();
+    const FORM_ENDPOINT = "https://www.formbackend.com/f/6853a413e9e988ff";
+
+    const handleSubmit = async (e) => {
+
+    };
+
     return (
         <>
             <div id="contact-form-container">
