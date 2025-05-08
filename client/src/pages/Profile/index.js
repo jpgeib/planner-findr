@@ -39,25 +39,26 @@ const Profile = (props) => {
             <div id="profile-container">
                 <div id="profile">
                     <div className="profile-col">
-                        <Image circular src={currentUser.profile_image} />
+                        <Image id="profile-image" src={currentUser.profile_image} />
                     </div>
                     <div className="profile-col">
-                        <Header as="h2">{currentUser.first_name} {currentUser.last_name}</Header>
+                        <Header id="profile-name" as="h2">{currentUser.first_name} {currentUser.last_name}</Header>
                         <Header as="h4" className="profile-header">
-                            Email: {currentUser.email}
+                            Email
                         </Header>
+                        <p className="profile-text">{currentUser.email}</p>
                         <Header as="h4" className="profile-header">
-                            Location: {currentUser.location}
+                            Location
                         </Header>
+                        <p className="profile-text">{currentUser.location}</p>
                         <Header as="h4" className="profile-header">
-                            Phone: {currentUser.phone_number}
+                            Phone
                         </Header>
+                        <p className="profile-text">{currentUser.phone_number}</p>
                         <Header as="h4" className="profile-header">
-                            About: {currentUser.about}
+                            About
                         </Header>
-                        <Header as="h4" className="profile-header">
-
-                        </Header>
+                        <p className="profile-text">{currentUser.about}</p>
                     </div>
                     <div className="profile-col">
                         <Header as="h2">My Reservations</Header>
