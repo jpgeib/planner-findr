@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { Route, Routes } from "react-router-dom";
-import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../context/authContext";
+import { Sidebar } from "semantic-ui-react";
 import Navbar from "../../components/Navbar";
+import MobileNavbar from "../../components/MobileNavbar";
 import Home from "../../pages/Home";
 import About from "../../pages/About";
 import Register from "../../pages/Register";
@@ -53,27 +54,31 @@ const App = () => {
 
   return (
     <>
-      <Navbar auth={auth} />
-      <Routes>
-        <Route exact path="/" element={<Home auth={auth} screenWidth={width} />} />
-        <Route exact path="/about" element={<About />} />
-        <Route exact path="/register" element={<Register auth={auth} />} />
-        <Route exact path="/login" element={<Login auth={auth} />} />
-        <Route exact path="/forgot" element={<ForgotPassword auth={auth} />} />
-        <Route exact path="/reset/:id/:token" element={<ResetPassword auth={auth} />} />
-        <Route exact path="/profile/:id" element={<Profile auth={auth} />} />
-        {/* <Route exact path="/events" element={<Events auth={auth} />} /> */}
-        <Route exact path="/event/:id" element={<SingleEvent auth={auth} />} />
-        {/* <Route exact path="/reservations" element={<Reservations auth={auth} />} /> */}
-        <Route exact path="/reservation/:id" element={<SingleReservation auth={auth} />} />
-        <Route exact path="/providers" element={<Providers auth={auth} />} />
-        <Route exact path="/provider/:id" element={<SingleProvider auth={auth} />} />
-        <Route exact path="/reviews" element={<Reviews auth={auth} />} />
-        <Route exact path="/review/:id" element={<SingleReview auth={auth} />} />
-        <Route exact path="/reviews/write" element={<WriteReview auth={auth} />} />
-        <Route exact path="/review/:id/edit" element={<EditReview auth={auth} />} />
-        <Route exact path="/contact" element={<Contact />} />
-      </Routes>
+      {width >= 992? <Navbar auth={auth} /> : <MobileNavbar auth={auth} screenWidth={width} />}
+      <Sidebar.Pushable>
+        <Sidebar.Pusher dimmed={false} style={{ minHeight: "100vh" }}>
+          <Routes>
+            <Route exact path="/" element={<Home auth={auth} screenWidth={width} />} />
+            <Route exact path="/about" element={<About />} />
+            <Route exact path="/register" element={<Register auth={auth} />} />
+            <Route exact path="/login" element={<Login auth={auth} />} />
+            <Route exact path="/forgot" element={<ForgotPassword auth={auth} />} />
+            <Route exact path="/reset/:id/:token" element={<ResetPassword auth={auth} />} />
+            <Route exact path="/profile/:id" element={<Profile auth={auth} />} />
+            {/* <Route exact path="/events" element={<Events auth={auth} />} /> */}
+            <Route exact path="/event/:id" element={<SingleEvent auth={auth} />} />
+            {/* <Route exact path="/reservations" element={<Reservations auth={auth} />} /> */}
+            <Route exact path="/reservation/:id" element={<SingleReservation auth={auth} />} />
+            <Route exact path="/providers" element={<Providers auth={auth} />} />
+            <Route exact path="/provider/:id" element={<SingleProvider auth={auth} />} />
+            <Route exact path="/reviews" element={<Reviews auth={auth} />} />
+            <Route exact path="/review/:id" element={<SingleReview auth={auth} />} />
+            <Route exact path="/reviews/write" element={<WriteReview auth={auth} />} />
+            <Route exact path="/review/:id/edit" element={<EditReview auth={auth} />} />
+            <Route exact path="/contact" element={<Contact />} />
+          </Routes>
+        </Sidebar.Pusher>
+      </Sidebar.Pushable>
       <Footer />
     </>
   );
