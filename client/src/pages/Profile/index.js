@@ -61,15 +61,15 @@ const Profile = (props) => {
                         <p className="profile-text">{currentUser.about}</p>
                     </div>
                     <div className="profile-col">
-                        <Header as="h2">My Reservations</Header>
+                        <Header id="profile-reservations-header" as="h2">My Reservations</Header>
                         <ProfileReservations currentUser={currentUser} />
                     </div>
                     <div className="profile-col">
-                        <Header as="h2">My Events</Header>
+                        <Header id="profile-events-header" as="h2">My Events</Header>
                         <ProfileEvents currentUser={currentUser} />
                     </div>
                     <div className="profile-col">
-                        <Header as="h2">My Reviews</Header>
+                        <Header id="profile-reviews-header" as="h2">My Reviews</Header>
                         <ProfileReviews currentUser={currentUser} />
                     </div>
                 </div>
