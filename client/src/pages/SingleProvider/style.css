@@ -284,8 +284,8 @@
     }
 
     #provider-banner-profile-image {
-        width: 140px;
-        height: 140px;
+        width: 120px;
+        height: 120px;
     }
 
     #provider-service,
@@ -295,5 +295,42 @@
 
     #provider-type {
         font-size: 12px;
+    }
+}
+
+@media (max-width: 361px) {
+    #provider-banner-container {
+        padding: 5%;
+    }
+
+    #provider-banner {
+        width: 100%;
+    }
+
+    .provider-banner-col:nth-child(1) {
+        grid-column: 2 / span 5;
+    }
+
+    .provider-banner-col:nth-child(2) {
+        grid-column: 8 / span 6;
+    }
+
+    .provider-banner-col:nth-child(3) {
+        grid-row: 2;
+        grid-column: 3 / span 8;
+    }
+
+    #provider-service,
+    #provider-rate {
+        font-size: 16px;
+    }
+
+    #provider-type {
+        font-size: 12px;
+    }
+
+    #provider-banner-profile-image {
+        width: 100px;
+        height: 100px;
     }
 }

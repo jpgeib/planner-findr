@@ -50,7 +50,6 @@ const SingleProvider = (props) => {
                         <Header id="provider-service" as="h2">{provider.service}</Header>
                         <Header id="provider-type" as="h4">{provider.type}</Header>
                         <Header id="provider-rate" as="h2">${provider.pay_rate}/hr</Header>
-
                     </div>
                     <div className="provider-banner-col">
                         <Button id="provider-request-booking-btn">Request Booking</Button>
